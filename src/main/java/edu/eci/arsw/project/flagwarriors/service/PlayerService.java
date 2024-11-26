@@ -76,8 +76,23 @@ public class PlayerService {
         
     }
 
+    public Boolean capturePower(Long id){
+        Player p = getPlayerById(id);
+        if (p == null) {
+            return false; // Si el jugador no existe, retorna false
+        }
+        if (p.isFlag()) {
+            return false; // Si ya tiene la bandera, retorna false
+        }
+    
+        //p.setFlag(true); Aqui debe ir un algo para 
+        updatePlayer(p);
+        return true;
+        
+    }
 
-    public Player updatePlayer(Player updatedPlayer) {
+
+    public void updatePlayer(Player updatedPlayer) {
     
         if (playerRepository.findById(updatedPlayer.getId()).orElse(null) != null) {
 
@@ -86,10 +101,9 @@ public class PlayerService {
             updatedPlayer.setFlag(updatedPlayer.isFlag());
             updatedPlayer.setTeam(updatedPlayer.getTeam());
     
-            return playerRepository.save(updatedPlayer);
+            playerRepository.save(updatedPlayer);
         }
         
-        return null;
     }
     
     

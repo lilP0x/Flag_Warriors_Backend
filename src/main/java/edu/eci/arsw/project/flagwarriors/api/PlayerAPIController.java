@@ -62,6 +62,25 @@ public class PlayerAPIController {
         }
 
     }
+
+
+    @PostMapping("/{id}/capture-power")
+    public ResponseEntity<?> capturePower(@PathVariable Long id) {
+        Player player = playerService.getPlayerById(id);
+
+        
+        if (player == null) {
+            return new ResponseEntity<>("Jugador no encontrado", HttpStatus.NOT_FOUND);
+        }
+
+        boolean success = playerService.capturePower(id);         
+        if (success) {
+            return new ResponseEntity<>("Bandera capturada con éxito", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("No se pudo capturar la bandera", HttpStatus.BAD_REQUEST);
+        }
+
+    }
     
     @GetMapping
     public ResponseEntity<List<Player>> getAllPlayers() {
