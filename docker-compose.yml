@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .  # El directorio donde está el Dockerfile del backend
+    ports:
+      - "8080:8080"  # Exponer el puerto 8080 de la aplicación Spring Boot
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod  # Activa el perfil de producción (si tienes perfiles en Spring)
+
