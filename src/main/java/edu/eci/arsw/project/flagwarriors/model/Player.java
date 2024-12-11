@@ -27,7 +27,7 @@ public class Player {
     @Column(name = "score", nullable = false)
     private int score;
 
-    @Column(name = "email", nullable = false, unique = true)
+    @Column(name = "email", nullable = true)
     private String email;
 
     @Column(name = "flag",nullable = true)

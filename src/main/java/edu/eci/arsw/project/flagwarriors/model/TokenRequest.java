@@ -4,5 +4,6 @@ import lombok.Data;
 
 @Data
 public class TokenRequest {
-    private String msToken;  // Token recibido de Microsoft
+    private String msToken;
+    private String name;
 }
