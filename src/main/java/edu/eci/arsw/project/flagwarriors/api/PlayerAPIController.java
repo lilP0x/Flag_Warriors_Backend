@@ -12,6 +12,7 @@ import edu.eci.arsw.project.flagwarriors.service.PlayerService;
 
 @RestController
 @RequestMapping("/api/players")
+@CrossOrigin(origins = "*")
 public class PlayerAPIController {
 
     @Autowired

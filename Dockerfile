@@ -1,4 +1,4 @@
-FROM openjdk:17-jdk-slim
+FROM openjdk:21-jdk-slim
 
 COPY target/flag-warriors-0.0.1-SNAPSHOT.jar /app.jar
 

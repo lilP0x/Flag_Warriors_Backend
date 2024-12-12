@@ -5,8 +5,14 @@ import java.net.http.WebSocket;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "players")
 
 public class Player {
@@ -20,6 +26,9 @@ public class Player {
 
     @Column(name = "score", nullable = false)
     private int score;
+
+    @Column(name = "email", nullable = true)
+    private String email;
 
     @Column(name = "flag",nullable = true)
     private boolean flag;
@@ -40,10 +49,6 @@ public class Player {
     @Column(name = "initialy",nullable = true)
     private int y;
     
-  
-
-    public Player() {
-    }
 
     public Player(Long id,String name, int score,boolean flag) {
         this.id = id;
