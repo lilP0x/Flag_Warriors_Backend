@@ -14,10 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
-import edu.eci.arsw.project.flagwarriors.model.Player;
 import edu.eci.arsw.project.flagwarriors.model.Team;
 import edu.eci.arsw.project.flagwarriors.service.PlayerService;
 import edu.eci.arsw.project.flagwarriors.service.TeamService;

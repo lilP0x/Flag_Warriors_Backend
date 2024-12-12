@@ -26,38 +26,5 @@ public class WebConfig implements WebMvcConfigurer {
         System.out.println("CORS configurado con éxito");
     }
 
-    @Bean
-    public CorsFilter corsFilter() {
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        CorsConfiguration config = new CorsConfiguration();
-        config.addAllowedOrigin("*");
-        config.addAllowedMethod("*");
-        config.addAllowedHeader("*");
-        config.setAllowCredentials(false);
-        source.registerCorsConfiguration("/**", config);
-        return new CorsFilter(source);
-    }
-
-
-
-
-// @Configuration
-// public class WebConfig implements WebMvcConfigurer {
-//     @Override
-//     public void addCorsMappings(CorsRegistry registry) {
-//        registry.addMapping("/**")
-//                .allowedOrigins("https://proyectoflagwarriors-dzbpcyeccmfzgaad.northeurope-01.azurewebsites.net","http://localhost:3000") // Asegúrate de que el frontend esté en este puerto
-//                .allowedMethods("GET", "POST", "PUT", "DELETE")
-//                .allowedHeaders("*");
-//     }
-
-    // @Override
-    // public void addCorsMappings(CorsRegistry registry) {
-    //     registry.addMapping("/**")
-    //         .allowedOrigins("http://localhost:3000") // Asegúrate de que el frontend esté en este puerto
-    //         .allowedMethods("GET", "POST", "PUT", "DELETE")
-    //         .allowedHeaders("*");
-    // }
-    
 }
 
